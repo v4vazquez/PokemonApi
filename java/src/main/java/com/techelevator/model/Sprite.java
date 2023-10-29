@@ -10,10 +10,10 @@ public class Sprite {
     private String frontDefault;
 
     //to add shinies later remember to do getters+setters and reformat the toString
-//    @JsonProperty("back_shiny")
-//    private String backShiny;
-//    @JsonProperty("front_shiny")
-//    private String frontShiny;
+    @JsonProperty("back_shiny")
+    private String backShiny;
+    @JsonProperty("front_shiny")
+    private String frontShiny;
 
     public String getBackDefault() {
         return backDefault;
@@ -31,11 +31,29 @@ public class Sprite {
         this.frontDefault = frontDefault;
     }
 
+    public String getBackShiny() {
+        return backShiny;
+    }
+
+    public void setBackShiny(String backShiny) {
+        this.backShiny = backShiny;
+    }
+
+    public String getFrontShiny() {
+        return frontShiny;
+    }
+
+    public void setFrontShiny(String frontShiny) {
+        this.frontShiny = frontShiny;
+    }
+
     @Override
     public String toString() {
         return "Sprite{" +
                 "backDefault='" + backDefault + '\'' +
                 ", frontDefault='" + frontDefault + '\'' +
+                ", backShiny='" + backShiny + '\'' +
+                ", frontShiny='" + frontShiny + '\'' +
                 '}';
     }
 }

@@ -10,7 +10,7 @@ public class PokemonDetail {
     private int baseExperience;
     private int height;
     private int weight;
-
+    @JsonProperty("sprites")
     private Sprite sprite;
 
     public int getId() {

@@ -32,7 +32,12 @@ public class RestPokeApiService implements PokeApiService{
                 //path("name" node called name
                 String name = root.path(i).path("name").asText();
                 String url = root.path(i).path("url").asText();
-                int id = i+1;
+                int pokemonIndex = url.indexOf("pokemon");
+                String pokemonString = url.substring(pokemonIndex);
+                int slashIndex = pokemonString.indexOf("/");
+                String number = pokemonString.substring(slashIndex + 1,pokemonString.length()-1);
+        
+                int id = Integer.parseInt(number);
 
                 //create a pokemon Object and set the values
                 Pokemon temp = new Pokemon();
