@@ -1,6 +1,9 @@
 <template>
     <div>
-        <pokemon-detail v-bind:id="$route.params.id" />
+        <pokemon-detail v-bind:id="$route.params.id"
+        :name="$route.params.name"
+        :weight="$route.params.weight"/>
+        
     </div>
 </template>
 

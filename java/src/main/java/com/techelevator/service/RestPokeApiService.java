@@ -36,7 +36,7 @@ public class RestPokeApiService implements PokeApiService{
                 String pokemonString = url.substring(pokemonIndex);
                 int slashIndex = pokemonString.indexOf("/");
                 String number = pokemonString.substring(slashIndex + 1,pokemonString.length()-1);
-        
+
                 int id = Integer.parseInt(number);
 
                 //create a pokemon Object and set the values
@@ -56,7 +56,7 @@ public class RestPokeApiService implements PokeApiService{
     @Override
     public PokemonDetail getPokemonDetailById(int id) {
         PokemonDetail pokemonDetail = rt.getForObject(API_URL + id, PokemonDetail.class);
-        System.out.println(pokemonDetail);
+//        System.out.println(pokemonDetail);
         return pokemonDetail;
     }
 }

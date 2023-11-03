@@ -5,7 +5,9 @@
             <router-link v-bind:to="{
                 name:'detail',
                 params:{
-                    id:pokemon.id
+                    id:pokemon.id,
+                    name:pokemon.name,
+                    weight:pokemon.weight
                 }}">
                 {{ pokemon.name }}
             </router-link>

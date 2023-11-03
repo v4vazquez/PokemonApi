@@ -13,6 +13,9 @@ public class PokemonDetail {
     @JsonProperty("sprites")
     private Sprite sprite;
 
+//    private List<String> types;
+//
+
     public int getId() {
         return id;
     }
@@ -53,6 +56,25 @@ public class PokemonDetail {
         this.sprite = sprite;
     }
 
+//    public List<String> getTypes() {
+//        return types;
+//    }
+//
+//    public void setTypes(List<String> types) {
+//        this.types = types;
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "PokemonDetail{" +
+//                "id=" + id +
+//                ", baseExperience=" + baseExperience +
+//                ", height=" + height +
+//                ", weight=" + weight +
+//                ", sprite=" + sprite +
+//                ", types=" + types +
+//                '}';
+//    }
     @Override
     public String toString() {
         return "PokemonDetail{" +
