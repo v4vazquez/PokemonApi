@@ -7,12 +7,15 @@
                 params:{
                     id:pokemon.id,
                     name:pokemon.name,
-                    weight:pokemon.weight
+                    weight:pokemon.weight,
+                    url:pokemon.url
                 }}">
                 {{ pokemon.name }}
             </router-link>
         </li>
         </ul>
+        <button v-if="$store.state.startingVal !='0'">Previous</button> &nbsp; | &nbsp;
+        <button @click="getNextPokemon">Next</button>
     </div>
 </template>
 
@@ -26,10 +29,26 @@ export default{
             pokemonArray :[]
         }
     },
+    methods:{
+        getNextPokemon(){
+            let start = this.$store.state.startingVal;
+            let end = this.$store.state.endingVal;
+            start+=20;
+            end+=20;
+            pokemonService.getNewPokemon(start,end).then(response => {
+                this.pokemonArray = response.data;
+                let values = {
+                    startingVal:start,
+                    endingVal:end
+                };
+                this.$store.commit("GET_NEXT_PREVIOUS",values);
+            })
+        }
+    },
     created(){
         pokemonService.getAllPokemon()
             .then(response => {
-                console.log(response);
+              //  console.log(response);
                 this.pokemonArray = response.data;
             })
     }

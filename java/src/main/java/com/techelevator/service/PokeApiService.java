@@ -13,4 +13,5 @@ public interface PokeApiService {
 
     PokemonDetail getPokemonDetailById(int id);
 
+    List<Pokemon> getMorePokemon(int startVal, int endVal);
 }

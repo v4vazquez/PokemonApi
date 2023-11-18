@@ -36,4 +36,9 @@ public class PokemonController {
       dao.savePokemon(pokemon);
    }
 
+   @GetMapping("/pokemon/{startVal}/{endVal}")
+   public List<Pokemon> getMorePokemon(@PathVariable int startVal,@PathVariable int endVal){
+         return service.getMorePokemon(startVal, endVal);
+   }
+
 }

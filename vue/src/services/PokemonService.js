@@ -14,5 +14,8 @@ export default{
     },
     saveFavorite(pokemon){
         return http.post('/pokemon',pokemon);
+    },
+    getNewPokemon(start,end){
+        return http.get(`/pokemon/${start}/${end}`)
     }
 }

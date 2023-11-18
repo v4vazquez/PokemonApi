@@ -36,24 +36,25 @@ methods:{
         let pokemonToSave = {
             id:this.id,
             name:this.name,
+            url:this.$route.params.url
         };
         pokemonService.saveFavorite(pokemonToSave)
-        .then(response=>{
+        .then((response)=>{
             console.log(response);
+            this.$router.push({name:'pokemon'});
         })
     }
 
 },
 created(){
-    pokemonService.getPokemonById(this.id)
-    .then(response=>{
+    pokemonService.getPokemonById(this.id).then((response)=>{
             this.pokemon = response.data;
             this.spriteImgFront=response.data.sprites.front_default;
             this.spriteImgBack=response.data.sprites.back_default;
             this.shinySpriteImgFront=response.data.sprites.front_shiny;
             this.shinySpriteImgBack=response.data.sprites.back_shiny;
     })
-}
+},
 };
 
 </script>
